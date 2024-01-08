@@ -4,7 +4,7 @@ This project leverages the NestJS framework and Node.js to create a Telegram bot
 
 ### Telegram Bot Link
 
-Find and interact with the Telegram bot [here]([https://t.me/YourTelegramWeatherBot](https://t.me/Harshul_AST_Weatherbot)).
+Find and interact with the Telegram bot [here](https://t.me/Harshul_AST_Weatherbot).
 
 ## Features
 
