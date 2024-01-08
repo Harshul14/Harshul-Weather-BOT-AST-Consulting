@@ -12,7 +12,6 @@ import {
   TableHead,
   TableRow,
   IconButton,
-  Link,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -21,13 +20,11 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    // Fetch API key and user list on component mount
     fetchApiKey();
     fetchUsers();
   }, []);
 
   const fetchApiKey = () => {
-    // Replace with your Nest.js API endpoint to fetch the API key
     axios.get('/admin/api-key')
       .then((response) => {
         setApiKey(response.data);
@@ -38,13 +35,12 @@ function App() {
   };
 
   const updateApiKey = () => {
-    // Replace with your Nest.js API endpoint to update the API key
     const newApiKey = prompt('Enter the new API key:');
     if (newApiKey) {
       axios.post('/admin/api-key', { key: newApiKey })
         .then((response) => {
           alert(response.data);
-          fetchApiKey(); // Refresh the API key after update
+          fetchApiKey();
         })
         .catch((error) => {
           console.error('Error updating API key:', error);
@@ -53,11 +49,10 @@ function App() {
   };
 
   const deleteUser = (chatId) => {
-    // Send a DELETE request to delete the user
     axios.delete(`/users/${chatId}`)
       .then((response) => {
         alert(response.data.message);
-        fetchUsers(); // Refresh the user list after deletion
+        fetchUsers();
       })
       .catch((error) => {
         console.error('Error deleting user:', error);
@@ -65,7 +60,6 @@ function App() {
   };
 
   const fetchUsers = () => {
-    // Replace with your Nest.js API endpoint to fetch the list of users
     axios.get('/users')
       .then((response) => {
         setUsers(response.data);
@@ -77,19 +71,36 @@ function App() {
 
   return (
     <Container maxWidth="md">
-      <Typography variant="h4" gutterBottom>Weather Admin Dashboard</Typography>
-
-      {/* Box for Managing API Keys */}
-      <Paper elevation={3} style={{ padding: '20px', marginBottom: '20px' }}>
+      <Container maxWidth="md" style={{ textAlign: 'center' }}>
+        <br></br>
+        <Typography variant="h4" gutterBottom>AST-Weatherbot Admin Dashboard</Typography>
+        <Typography variant="h8" gutterBottom>Submitted By: Harshul Varshney</Typography>
+        <br></br>
+        <Typography variant="h8" gutterBottom>Enrollment No.: 20103170</Typography>
+        <br></br>
+        <Typography variant="h8" gutterBottom>Email ID: hvarshney137@gmail.com</Typography>
+        <br></br>
+        <Button variant="contained" color="primary" href="https://t.me/Harshul_AST_Weatherbot" target="_blank" rel="noopener noreferrer" style={{ marginTop: '20px', borderRadius: '20px', backgroundColor: '#50c878', margin: '10px' }}>
+          Go to Weather Bot
+        </Button>
+        <br></br>
+      </Container>
+      <Paper
+        elevation={3}
+        style={{
+          padding: '20px',
+          marginBottom: '20px',
+          borderRadius: '20px',
+          backgroundColor: '#FFFDD0',
+        }}
+      >
         <Typography variant="h5" gutterBottom>Manage API Key</Typography>
         <Typography variant="body1" gutterBottom>Current API Key: {apiKey}</Typography>
-        <Button variant="contained" color="primary" onClick={updateApiKey} style={{ marginTop: '10px' }}>
+        <Button variant="contained" color="primary" onClick={updateApiKey} style={{ marginTop: '10px', backgroundColor: '#50c878' }}>
           Update API Key
         </Button>
       </Paper>
-
-      {/* Box for Listing Current Users */}
-      <Paper elevation={3} style={{ padding: '20px' }}>
+      <Paper elevation={3} style={{ padding: '20px', borderRadius: '20px', backgroundColor: '#FFFDD0', textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>Current Users</Typography>
         <TableContainer>
           <Table>
@@ -116,11 +127,6 @@ function App() {
           </Table>
         </TableContainer>
       </Paper>
-
-      {/* Footer */}
-      <Typography variant="body2" style={{ marginTop: '20px' }}>
-        You can find the bot at: <Link href="https://t.me/Harshul_AST_Weatherbot" target="_blank" rel="noopener noreferrer">https://telegram-link-to-bot</Link>
-      </Typography>
     </Container>
   );
 }
