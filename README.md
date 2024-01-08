@@ -11,6 +11,13 @@ This project leverages the NestJS framework and Node.js to create a Telegram bot
 - **Admin Panel**: Includes an admin panel accessible through Google login to manage bot settings (API keys, etc.) and user accounts (blocking, deleting, etc.).
 - **OpenWeatherMap API**: Integration with the OpenWeatherMap API to fetch accurate weather data.
 
+## Screenshots
+![image](https://github.com/Harshul14/Harshul-Weather-BOT-AST-Consulting/assets/71930077/af52babf-58b0-4c8a-bb13-5457656adb2c)
+![image](https://github.com/Harshul14/Harshul-Weather-BOT-AST-Consulting/assets/71930077/823f9b5a-3489-4cbb-9d97-b0b93f329884)
+![image](https://github.com/Harshul14/Harshul-Weather-BOT-AST-Consulting/assets/71930077/1a75b0ae-280c-4bdd-8f22-4292cce7885f)
+![image](https://github.com/Harshul14/Harshul-Weather-BOT-AST-Consulting/assets/71930077/7888e7e4-1666-4482-b5a2-18261611b2f4)
+
+
 ## Setup
 
 ### Installation
